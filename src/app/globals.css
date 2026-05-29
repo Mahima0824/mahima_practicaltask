@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Sora:wght@600&display=swap");
+
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #1a1c1d;
+  --color-primary-orange: #ff3e1d;
+  --color-muted-gray: #5f5e5e;
+  --color-contact-gray: #3d4947;
+  --color-footer-bg: #fff1ef;
+  --color-card-border: #e2bfb0;
+  --color-icon-bg: #f0f4f8;
+  --color-primary-orange-dark: #e03517;
+  --color-border-light: #f0f2f5;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-brand-primary: var(--color-primary-orange);
+  --color-muted-gray: var(--color-muted-gray);
+  --color-contact-gray: var(--color-contact-gray);
+  --color-footer-bg: var(--color-footer-bg);
+  --color-card-border: var(--color-card-border);
+  --color-icon-bg: var(--color-icon-bg);
+  --color-primary-orange-dark: var(--color-primary-orange-dark);
+  --color-border-light: var(--color-border-light);
+  --font-sans: "Inter", sans-serif;
+  --font-sora: "Sora", sans-serif;
+}
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: "Inter", sans-serif;
+    background-color: var(--background);
+    color: var(--foreground);
+  }
+}
+
+/* ── Page Loader ── */
+.loader-wrap {
+  position: relative;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ff3e1d;
+  position: absolute;
+  top: 37px;
+  left: 19px;
+  transform: translate(-18px, -18px);
+  display: block;
+}
+
+@keyframes loaderCircle {
+  25%  { stroke-dashoffset: 125; }
+  50%  { stroke-dashoffset: 175; }
+  75%  { stroke-dashoffset: 225; }
+  100% { stroke-dashoffset: 275; }
+}
+
+@keyframes loaderDotCircle {
+  25%  { transform: translate(0, 0); }
+  50%  { transform: translate(18px, -18px); }
+  75%  { transform: translate(0, -36px); }
+  100% { transform: translate(-18px, -18px); }
+}
